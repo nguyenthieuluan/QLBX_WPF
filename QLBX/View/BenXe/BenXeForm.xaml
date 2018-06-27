@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="QLBX.FormChucNang.BenXeForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            TextElement.FontWeight="Regular"
+            TextElement.FontSize="13"
+            TextOptions.TextFormattingMode="Ideal"
+            TextOptions.TextRenderingMode="Auto"
+            Background="{DynamicResource MaterialDesignPaper}"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+             xmlns:local="clr-namespace:QLBX.FormChucNang"
+             mc:Ignorable="d" 
+             xmlns:uc="clr-namespace:QLBX.UC"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             DataContext="{StaticResource BenXeVM}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+       
+        <materialDesign:Card Grid.Row="0" Grid.ColumnSpan="2" Margin="5">
+            <WrapPanel Margin="0 0 0 10">
+                <TextBox IsEnabled="False" Text="{Binding ID, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Id" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox Text="{Binding TENBEN, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên Bến" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox Text="{Binding TINH, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tỉnh" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </WrapPanel>
+        </materialDesign:Card>
+        <Grid Grid.Row="1" Background="Bisque">
+            <materialDesign:Card Margin="2">
+                <ListView ItemsSource="{Binding BenXeList}"  SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id Bến" DisplayMemberBinding="{Binding IDBEN}"></GridViewColumn>
+                            <GridViewColumn Header="Tên Bến" DisplayMemberBinding="{Binding TENBEN}"></GridViewColumn>
+                            <GridViewColumn Header="Tỉnh" DisplayMemberBinding="{Binding TINH}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </materialDesign:Card>
+            <uc:hoangG VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 20 20 0"></uc:hoangG>
+            
+        </Grid>
+    </Grid>
+</UserControl>

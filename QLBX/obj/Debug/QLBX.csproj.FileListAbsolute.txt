@@ -1,0 +1,248 @@
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\QLBX.exe.config
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\QLBX.exe
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\QLBX.pdb
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\EntityFramework.dll
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\MaterialDesignColors.dll
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\EntityFramework.xml
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\HP\source\repos\QLBX\QLBX\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\TuyenXeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\BaoCaoThongKeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\ChuyenXeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\DatMuaVeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\DatVeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\GiaoNhanHangForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\KhachGuiNhanHangForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\KhachHangForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\LichTrinhForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\QuanLyXeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\SapLichForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\LoginForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\MainWindow.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\NhanVienBanVeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\PhuXeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\TuyenXeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\TaiXeForm.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\UC\ControlBarUC.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\UC\hoangG.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\App.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX_Content.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX_MarkupCompile.cache
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX_MarkupCompile.lref
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\App.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\BaoCaoThongKeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\ChuyenXeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\DatMuaVeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\DatVeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\GiaoNhanHangForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\KhachGuiNhanHangForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\KhachHangForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\LichTrinhForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\QuanLyXeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\SapLichForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\LoginForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\MainWindow.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\NhanVienBanVeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\PhuXeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\ResourceXAML\Dictionary.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\FormChucNang\TaiXeForm.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\UC\ControlBarUC.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\UC\hoangG.baml
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX.g.resources
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX.Properties.Resources.resources
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX.csproj.GenerateResource.Cache
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX.exe
+C:\Users\HP\source\repos\QLBX\QLBX\obj\Debug\QLBX.pdb
+E:\repos - Copy\QLBX\QLBX\bin\Debug\QLBX.exe.config
+E:\repos - Copy\QLBX\QLBX\bin\Debug\QLBX.exe
+E:\repos - Copy\QLBX\QLBX\bin\Debug\QLBX.pdb
+E:\repos - Copy\QLBX\QLBX\bin\Debug\EntityFramework.dll
+E:\repos - Copy\QLBX\QLBX\bin\Debug\EntityFramework.SqlServer.dll
+E:\repos - Copy\QLBX\QLBX\bin\Debug\GongSolutions.WPF.DragDrop.dll
+E:\repos - Copy\QLBX\QLBX\bin\Debug\itextsharp.dll
+E:\repos - Copy\QLBX\QLBX\bin\Debug\MaterialDesignColors.dll
+E:\repos - Copy\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\repos - Copy\QLBX\QLBX\bin\Debug\Microsoft.Expression.Interactions.dll
+E:\repos - Copy\QLBX\QLBX\bin\Debug\System.Windows.Interactivity.dll
+E:\repos - Copy\QLBX\QLBX\bin\Debug\EntityFramework.xml
+E:\repos - Copy\QLBX\QLBX\bin\Debug\EntityFramework.SqlServer.xml
+E:\repos - Copy\QLBX\QLBX\bin\Debug\GongSolutions.WPF.DragDrop.pdb
+E:\repos - Copy\QLBX\QLBX\bin\Debug\GongSolutions.WPF.DragDrop.xml
+E:\repos - Copy\QLBX\QLBX\bin\Debug\itextsharp.xml
+E:\repos - Copy\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\repos - Copy\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\repos - Copy\QLBX\QLBX\bin\Debug\Microsoft.Expression.Interactions.xml
+E:\repos - Copy\QLBX\QLBX\bin\Debug\System.Windows.Interactivity.xml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\BaoCaoThongKeForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\KhachHangForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\SaoLuuForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\LoginForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\MainWindow.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCBooking.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCNhanVienBanVe.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCPhanQuyen.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCQlyNhanvien.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCThongKe.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCVeXe.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TuyenXeForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\ControlBarUC.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\hoangG.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UserControl1.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\App.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX_Content.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX_MarkupCompile.cache
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX_MarkupCompile.lref
+E:\repos - Copy\QLBX\QLBX\obj\Debug\App.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\BaoCaoThongKeForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\KhachHangForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\SaoLuuForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\LoginForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\MainWindow.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\ResourceXAML\Dictionary.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCBooking.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCNhanVienBanVe.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCPhanQuyen.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCQlyNhanvien.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCThongKe.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TiG\UCVeXe.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\TuyenXeForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\ControlBarUC.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\hoangG.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UserControl1.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.g.resources
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.Form1.resources
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.Properties.Resources.resources
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.csproj.GenerateResource.cache
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.csproj.CoreCompileInputs.cache
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.csproj.CopyComplete
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.exe
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.pdb
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\Menu.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\Menu.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\UCLoad.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\UCLoad.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\BenXe\BenXeForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\BenXe\BenXeSubForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\BenXe\UCBenXe.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\BenXe\BenXeForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\BenXe\BenXeSubForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\BenXe\UCBenXe.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\ControlBarMainUC.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\UC\ControlBarMainUC.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\SapLich\SapLichForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\SapLich\SapLichSubForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\SapLich\SapLichForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\SapLich\SapLichSubForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\NhanVien\PhuXeForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\NhanVien\TaiXeForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\NhanVien\PhuXeForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\NhanVien\TaiXeForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\ChuyenXe\ChuyenXeForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\ChuyenXe\ChuyenXeForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\Xe\QuanLyXeForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\Xe\QuanLyXeForm.baml
+E:\repos - Copy\QLBX\QLBX\obj\Debug\QLBX.csprojResolveAssemblyReference.cache
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\NhanVien\LichTrinhForm.g.cs
+E:\repos - Copy\QLBX\QLBX\obj\Debug\View\NhanVien\LichTrinhForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\QLBX.exe.config
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\QLBX.exe
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\QLBX.pdb
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\EntityFramework.dll
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\EntityFramework.SqlServer.dll
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\GongSolutions.WPF.DragDrop.dll
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\itextsharp.dll
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\MaterialDesignColors.dll
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\Microsoft.Expression.Interactions.dll
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\System.Windows.Interactivity.dll
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\EntityFramework.xml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\EntityFramework.SqlServer.xml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\GongSolutions.WPF.DragDrop.pdb
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\GongSolutions.WPF.DragDrop.xml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\itextsharp.xml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\Microsoft.Expression.Interactions.xml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\System.Windows.Interactivity.xml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.csprojResolveAssemblyReference.cache
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BaoCaoThongKeForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BenXe\BenXeForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BenXe\BenXeSubForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\ChuyenXe\ChuyenXeForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\KhachHangForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\NhanVien\LichTrinhForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\Xe\QuanLyXeForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\SaoLuuForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\SapLich\SapLichForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\SapLich\SapLichSubForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\LoginForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\MainWindow.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\NhanVien\PhuXeForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCBooking.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCNhanVienBanVe.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCPhanQuyen.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCQlyNhanvien.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCThongKe.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCVeXe.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TuyenXeForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\NhanVien\TaiXeForm.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BenXe\UCBenXe.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\ControlBarMainUC.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\UCLoad.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\ControlBarUC.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\hoangG.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\Menu.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UserControl1.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\App.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX_Content.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX_MarkupCompile.cache
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX_MarkupCompile.lref
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\App.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BaoCaoThongKeForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BenXe\BenXeForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BenXe\BenXeSubForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\ChuyenXe\ChuyenXeForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\KhachHangForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\NhanVien\LichTrinhForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\Xe\QuanLyXeForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\SaoLuuForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\SapLich\SapLichForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\SapLich\SapLichSubForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\LoginForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\MainWindow.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\NhanVien\PhuXeForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\ResourceXAML\Dictionary.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCBooking.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCNhanVienBanVe.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCPhanQuyen.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCQlyNhanvien.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCThongKe.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TiG\UCVeXe.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\TuyenXeForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\NhanVien\TaiXeForm.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BenXe\UCBenXe.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\ControlBarMainUC.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\UCLoad.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\ControlBarUC.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\hoangG.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UC\Menu.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\UserControl1.baml
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.g.resources
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.Form1.resources
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.Properties.Resources.resources
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.csproj.GenerateResource.cache
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.csproj.CoreCompileInputs.cache
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.csproj.CopyComplete
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.exe
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.pdb

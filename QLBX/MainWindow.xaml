@@ -1,0 +1,600 @@
+﻿<Window x:Class="QLBX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:QLBX.View.UC"
+        mc:Ignorable="d"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        DataContext="{StaticResource MainVM}"
+        WindowStartupLocation="CenterScreen"
+        Name="mainWindow" Icon="Img/ico.ico"
+        WindowStyle="SingleBorderWindow"
+        MinWidth="500" MinHeight="400" Background="Transparent"
+        Title="Quản Lý Bến Xe" Height="700" Width="1200"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:viewModel="clr-namespace:QLBX.Converter"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+    
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" CommandParameter="{Binding ElementName=mainWindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Window.Resources>
+         
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="luna2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="80"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="250"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="luna2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="80"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+        <!--#region Resource copy :)-->
+        <!-- Custom ToggleButton -->
+        <Style x:Key="ToggleButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition From="Unchecked" To="Checked">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <QuarticEase EasingMode="EaseOut"/>
+                                            </VisualTransition.GeneratedEasingFunction>
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ExpandPath">
+                                                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-180"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition GeneratedDuration="0" To="Unchecked">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ExpandPath">
+                                                    <EasingDoubleKeyFrame KeyTime="0" Value="-180"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition GeneratedDuration="0" To="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ExpandPath">
+                                                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition From="Checked" GeneratedDuration="0" To="Unchecked">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <QuarticEase EasingMode="EaseOut"/>
+                                            </VisualTransition.GeneratedEasingFunction>
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ExpandPath">
+                                                    <EasingDoubleKeyFrame KeyTime="0" Value="-180"/>
+                                                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Checked">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ExpandPath">
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-180"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ExpandPath">
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <!--<materialDesign:PackIcon Kind="MenuDown" Opacity=".38" x:Name="ExpandPath" RenderTransformOrigin="0.5,0.5"
+                                      Height="24" Width="24" Foreground="{TemplateBinding Foreground}">
+                                <materialDesign:PackIcon.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform />
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </materialDesign:PackIcon.RenderTransform>
+                            </materialDesign:PackIcon>-->
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- Custom Header Expander -->
+        <Style x:Key="ExpanderDownHeaderStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border Background="{TemplateBinding Background}" Padding="24,5,5,5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <ContentPresenter Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                              ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                              VerticalAlignment="Center"
+                                              Margin="0,0,16,0" />
+                                <!--<ToggleButton Grid.Column="1"
+                                          VerticalAlignment="Center"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          IsChecked="{Binding Path=IsChecked, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Style="{StaticResource ToggleButton}"/>-->
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+        
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnClose" x:Name="close">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"></BeginStoryboard>
+        </EventTrigger>
+
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnOpen">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"></BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    
+    <Grid x:Name="luna3">
+        <Grid.Background>
+            <ImageBrush ImageSource="Img/h0.jpg">
+            </ImageBrush>
+        </Grid.Background>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="200" MaxWidth="300"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Menu Header--> 
+            <Grid Grid.Row="0" Grid.ColumnSpan="3" Margin="0 0 0 1">
+                    <Menu Opacity="0.6" Background="Beige" Foreground="Brown" DockPanel.Dock="Left" HorizontalAlignment="Stretch">
+                        <Menu.Resources>
+                            <Style TargetType="MenuItem">
+                                <Setter Property="Height" Value="25"/>
+                                <Setter Property="Margin" Value="10 0 0 0"></Setter>
+                            </Style>
+                        </Menu.Resources>
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <WrapPanel>
+                                    <materialDesign:PackIcon Kind="Apps" />
+                                    <TextBlock Margin="1 0 0 0">Hệ thống</TextBlock>
+                                </WrapPanel>
+                            </MenuItem.Header>
+                            <MenuItem Header="_Đăng xuất"
+                              Command="{Binding DangXuatCommand}"/>
+                            <MenuItem Header="_Tài khoản" />
+                            <Separator />
+                            <MenuItem Header="Thoát"
+                              CommandParameter="{Binding ElementName=mainWindow}"
+                              Command="{Binding CloseCommand}"/>
+                        </MenuItem>
+
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <WrapPanel>
+                                    <materialDesign:PackIcon Kind="BackupRestore" />
+                                    <TextBlock Margin="1 0 0 0">Sao lưu</TextBlock>
+                                </WrapPanel>
+                            </MenuItem.Header>
+                            <MenuItem Header="_Sao Lưu và phục hồi"
+                              Command="{Binding SaoLuuCommand}"
+                              CommandParameter="{Binding ElementName=luna}" />
+                        </MenuItem>
+
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <WrapPanel>
+                                    <materialDesign:PackIcon Kind="ContentCut" />
+                                    <TextBlock Margin="1 0 0 0">Edit</TextBlock>
+                                </WrapPanel>
+                            </MenuItem.Header>
+                            <MenuItem Command="Cut" />
+                            <MenuItem Command="Copy" />
+                            <MenuItem Command="Paste" />
+                        </MenuItem>
+
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <WrapPanel>
+                                    <materialDesign:PackIcon Kind="HelpBox" />
+                                    <TextBlock Margin=" 1 0 0 0">Hỗ trợ</TextBlock>
+                                </WrapPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                    </Menu>
+            </Grid>
+
+            <!--MenuBar Left && ccontent-->
+            <DockPanel Grid.Row="1" Grid.ColumnSpan="3" >
+                <!--Left Menu-->
+                <Grid x:Name="luna2" Width="250" DockPanel.Dock="Left" Background="Bisque" Opacity="0.9">
+                    
+                    <Grid Background="Black" Opacity="0.8"></Grid>
+                    
+                    <StackPanel>
+                        <!--Header Menu (open and close button)-->
+                        <Grid Height="100">
+                            <Button x:Name="btnClose" Click="Button_Click" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}">
+                                <materialDesign:PackIcon Kind="ArrowLeft" Width="30" Height="20"></materialDesign:PackIcon>
+                            </Button>
+                            <Button Margin="8 0 0 0" x:Name="btnOpen" Click="Button_Click" Visibility="Collapsed" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}">
+                                <materialDesign:PackIcon Kind="Menu"  Width="30" Height="20"></materialDesign:PackIcon>
+                            </Button>
+                        </Grid>
+                        
+                        <!--Content Menu-->
+                        <StackPanel>
+                            <ListBox Background="{x:Null}" Foreground="#FF6CE3FB" FontWeight="Bold">
+                                
+                                <ListBox.Resources>
+                                    <!-- Math Converter -->
+                                    <viewModel:MathMultipleConverter x:Key="MathMlpMultipleConverter" Operation="Multiply" />
+                                    
+                                    <!--#region Style Expander and Children-->
+                                    <Style TargetType="{x:Type Expander}">
+                                        <!-- Set isExpander -->
+                                        <Setter Property="IsExpanded" Value="{Binding Path=IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}"/>
+                                        <!-- Set Custom Expander -->
+                                        <Setter Property="Margin" Value="0 10 0 0"/>
+                                        <Setter Property="FontSize" Value="18"/>
+                                        <Setter Property="MinHeight" Value="40"/>
+                                        <Setter Property="BorderThickness" Value="0" />
+                                        <Setter Property="Background" Value="#00FFFFFF"/>
+                                        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                        <Setter Property="VerticalContentAlignment" Value="Top"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Expander}">
+                                                    <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                                                        <VisualStateManager.VisualStateGroups>
+                                                            <VisualStateGroup x:Name="ExpansionStates">
+                                                                <VisualStateGroup.Transitions>
+                                                                    <VisualTransition GeneratedDuration="0" To="Expanded">
+                                                                        <VisualTransition.GeneratedEasingFunction>
+                                                                            <CubicEase EasingMode="EaseOut"/>
+                                                                        </VisualTransition.GeneratedEasingFunction>
+                                                                        <Storyboard>
+                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_Content" Storyboard.TargetProperty="Visibility">
+                                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                                                            </ObjectAnimationUsingKeyFrames>
+                                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Content" To="1" Duration="0:0:0.3"/>
+                                                                        </Storyboard>
+                                                                    </VisualTransition>
+                                                                    <VisualTransition GeneratedDuration="0" To="Collapsed">
+                                                                        <VisualTransition.GeneratedEasingFunction>
+                                                                            <CubicEase EasingMode="EaseOut"/>
+                                                                        </VisualTransition.GeneratedEasingFunction>
+                                                                        <Storyboard>
+                                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_Content" Storyboard.TargetProperty="Visibility">
+                                                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Collapsed}" />
+                                                                            </ObjectAnimationUsingKeyFrames>
+                                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Content" To="0" Duration="0:0:0.3"/>
+                                                                        </Storyboard>
+                                                                    </VisualTransition>
+                                                                </VisualStateGroup.Transitions>
+                                                                <VisualState x:Name="Expanded">
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Content" To="1" Duration="0"/>
+                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_Content" Storyboard.TargetProperty="Visibility">
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                                                        </ObjectAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                                <VisualState x:Name="Collapsed">
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_Content" To="0" Duration="0"/>
+                                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_Content" Storyboard.TargetProperty="Visibility">
+                                                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
+                                                                        </ObjectAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                            </VisualStateGroup>
+                                                        </VisualStateManager.VisualStateGroups>
+                                                        <DockPanel Background="{TemplateBinding Background}">
+                                                            <ToggleButton Name="HeaderSite"
+                                              DockPanel.Dock="Top"
+                                              BorderThickness="0" Cursor="Hand"
+                                              IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              Style="{StaticResource ExpanderDownHeaderStyle}"
+                                              TextElement.FontSize="14"
+                                              Opacity=".87"
+                                              Foreground="{TemplateBinding Foreground}"
+                                              Content="{TemplateBinding Header}"
+                                              ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                              ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                                              ContentStringFormat="{TemplateBinding HeaderStringFormat}"/>
+                                                            <Border Name="ContentSite"
+                                        DockPanel.Dock="Bottom"                                    >
+                                                                <StackPanel Name="ContentPanel"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                Margin="{TemplateBinding Padding}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                                    <StackPanel.Height>
+                                                                        <MultiBinding Converter="{StaticResource MathMlpMultipleConverter}">
+                                                                            <Binding ElementName="PART_Content" Path="ActualHeight"/>
+                                                                            <Binding ElementName="PART_Content" Path="Opacity"/>
+                                                                        </MultiBinding>
+                                                                    </StackPanel.Height>
+                                                                    <StackPanel.Width>
+                                                                        <MultiBinding Converter="{StaticResource MathMlpMultipleConverter}">
+                                                                            <Binding ElementName="PART_Content" Path="ActualWidth"/>
+                                                                            <Binding ElementName="PART_Content" Path="Opacity"/>
+                                                                        </MultiBinding>
+                                                                    </StackPanel.Width>
+                                                                    <ContentPresenter Name="PART_Content" Focusable="False"
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                          ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                          ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"/>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="ExpandDirection" Value="Down">
+                                                            <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Top"/>
+                                                            <Setter Property="DockPanel.Dock" TargetName="ContentSite" Value="Bottom"/>
+                                                            <Setter Property="Orientation" TargetName="ContentPanel" Value="Vertical"/>
+                                                            <Setter Property="Width" TargetName="ContentPanel" Value="Auto"/>
+                                                            <Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderDownHeaderStyle}"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+
+                                            </Setter.Value>
+                                        </Setter>
+
+                                        <Style.Triggers>
+                                            <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="FontSize" To="21"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetProperty="FontSize" To="20"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Style.Triggers>
+                                        
+                                    </Style>
+                                    <Style TargetType="Button" x:Key="luanStyle">
+                                        <Setter Property="Width" Value="{Binding ElementName=withluan,Path=ActualWidth}"/>
+                                        <Setter Property="Background" Value="{x:Null}"></Setter>
+                                        <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+                                        <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
+                                        <Setter Property="Foreground" Value="#FF6CE3FB"></Setter>
+                                        <Setter Property="Margin" Value="60 0 0 0"/>
+                                        <Setter Property="ClickMode" Value="Press"></Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                                <EventTrigger RoutedEvent="Button.Click">
+                                                </EventTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                    <!--#endregion-->
+                                    
+                                </ListBox.Resources>
+
+                                <ListBox.Template>
+                                    <ControlTemplate TargetType="{x:Type ListBox}">
+                                        <ItemsPresenter/>
+                                    </ControlTemplate>
+                                </ListBox.Template>
+
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+
+                                <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+                                
+                                <!--#region Content-->
+                                <Expander x:Name="expander1"> <!--Ve Expander-->
+                                    <Expander.Header> 
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Foreground="White" Kind="StickerEmoji" Width="25" Height="25" Margin="0 0 20 0"></materialDesign:PackIcon>
+                                            <TextBlock>VÉ</TextBlock>
+                                        </StackPanel>
+                                    </Expander.Header>
+                                    <StackPanel Margin="20,0,0,0">
+                                        <Button Style="{StaticResource luanStyle}" Command="{Binding DatVeCommand}" Content="Đặt Vé" CommandParameter="{Binding ElementName=luna}"></Button>
+                                        <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+                                    </StackPanel>
+                                </Expander>
+                                <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+
+                                <Expander x:Name="expander2"> <!--Nhan Vien Expander-->
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="AccountCircle" Width="25" Height="25" Margin="0 0 20 0"></materialDesign:PackIcon>
+                                            <TextBlock>NHÂN VIÊN</TextBlock>
+                                        </StackPanel>
+                                    </Expander.Header>
+                                    <StackPanel Margin="20,0,0,0" x:Name="withluan">
+
+                                        <Button Content="Tài Xế" Command="{Binding TaiXeCommand}" Style="{StaticResource luanStyle}"
+                                         CommandParameter="{Binding ElementName=luna}"></Button>
+                                        <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+
+                                        <Button Content="Bán Vé Xe" Command="{Binding NhanVienBanVeCommand}" Style="{StaticResource luanStyle}"
+                                        CommandParameter="{Binding ElementName=luna}"></Button>
+
+
+                                    </StackPanel>
+                                </Expander>
+                                <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+
+                                <Expander x:Name="expander3">
+                                    <!--Sap lich Expander-->
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="CalendarPlus" Width="25" Height="25" Margin="0 0 20 0"></materialDesign:PackIcon>
+                                            <TextBlock>SẮP LỊCH</TextBlock>
+                                        </StackPanel>
+                                    </Expander.Header>
+                                    <StackPanel Margin="20,0,0,0">
+                                        <Button Content="Chuyến Xe" Command="{Binding SapLichCommand}"
+                                        CommandParameter="{Binding ElementName=luna}" Style="{StaticResource luanStyle}"></Button>
+                                        <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+                                    </StackPanel>
+                                </Expander>
+                                <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+
+                                <Expander x:Name="expander6"> <!--Quan ly chuyen expander-->
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="AirplaneLanding" Width="25" Height="25" Margin="0 0 20 0"></materialDesign:PackIcon>
+                                            <TextBlock>QUẢN LÝ CHUYẾN</TextBlock>
+                                        </StackPanel>
+                                    </Expander.Header>
+                                    <StackPanel Margin="20,0,0,0">
+                                        <Button Content="Chuyến Xe" Command="{Binding ChuyenXeCommand}" Style="{StaticResource luanStyle}"
+                                        CommandParameter="{Binding ElementName=luna}"></Button>
+                                        
+                                        <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+
+                                        <Button Content="Tuyến Xe" Command="{Binding TuyenXeCommand}" Style="{StaticResource luanStyle}"
+                                        CommandParameter="{Binding ElementName=luna}"></Button>
+                                    </StackPanel>
+                                </Expander>
+                                <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+
+                                <Expander x:Name="expander4"><!--Ben Xe Expander-->
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="CarEstate" Width="25" Height="25" Margin="0 0 20 0"></materialDesign:PackIcon>
+                                            <TextBlock>BẾN XE</TextBlock>
+                                        </StackPanel>
+                                    </Expander.Header>
+                                    <StackPanel Margin="20,0,0,0">
+                                        <Button Content="Bến Xe" Command="{Binding BenXeCommand}" Style="{StaticResource luanStyle}"
+                                        CommandParameter="{Binding ElementName=luna}"></Button>
+                                        <Button Content="Quản Lý Xe" Command="{Binding QuanLyXeCommand}" Style="{StaticResource luanStyle}"
+                                        CommandParameter="{Binding ElementName=luna}"></Button>
+                                    </StackPanel>
+                                </Expander>
+                                <Border Background="{DynamicResource MaterialDesignDivider}" Height="1" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" />
+
+                                <Expander x:Name="expander5"> <!--Thong Ke Expander-->
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="ChartBarStacked" Width="25" Height="25" Margin="0 0 20 0"></materialDesign:PackIcon>
+                                            <TextBlock>THỐNG KÊ</TextBlock>
+                                        </StackPanel>
+                                    </Expander.Header>
+                                    <StackPanel Margin="20,0,0,0">
+                                        <Button Content="Thống Kê" Command="{Binding ThongkeCommand}" Style="{StaticResource luanStyle}"
+                                        CommandParameter="{Binding ElementName=luna}"></Button>
+                                    </StackPanel>
+                                </Expander>
+                                <!--#endregion-->
+                                
+                            </ListBox>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Grid>
+                
+                <!--GridSpliiter-->
+                <GridSplitter Width="5" HorizontalAlignment="Stretch"></GridSplitter>
+                
+                <!--Content-->
+                <Grid Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.Resources>
+                        <LinearGradientBrush x:Key="LGB1" SpreadMethod="Reflect" StartPoint="0.5,-0.1" EndPoint="0.4,.4">
+                            <GradientStop Color="WhiteSmoke" Offset="0.0" />
+                            <GradientStop Color="Transparent" Offset="0.9" />
+                        </LinearGradientBrush>
+                    </Grid.Resources>
+                    <Grid Background="WhiteSmoke" Opacity="{Binding ElementName=sliderOpacity, Path=Value}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
+                    <Rectangle Canvas.Top="5" Canvas.Left="5" Fill="{StaticResource LGB1}" Opacity="1"/>
+
+                    <materialDesign:Card HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                            <Grid x:Name="luna" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Grid>
+                    </materialDesign:Card>
+                </Grid>
+                
+            </DockPanel>
+            
+            <!--Footer bar-->
+            <DockPanel Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                    Opacity="0.7" Margin="0 1 0 0"
+                    Background="LightGray">
+                
+                <Button  Height="auto" Margin="2" DockPanel.Dock="Left"
+                    Command="{Binding ChangeBackGroundCommand}"
+                    CommandParameter="{Binding ElementName=luna3}">
+                    <materialDesign:PackIcon Kind="Settings" />
+                    
+                </Button>
+                <Button x:Name="x" Height="auto" Click="Button_Click1" Margin="2" DockPanel.Dock="Left">
+                    <materialDesign:PackIcon Kind="Home" />
+                </Button>
+                <Slider x:Name="sliderOpacity" VerticalAlignment="Bottom" Value="0.6" Minimum="0.5" Maximum="0.9" Margin="10 0 0 0" Width="300" DockPanel.Dock="Left"></Slider>
+                <TextBlock Margin="0 0 20 0" FontFamily="Century Gothic" HorizontalAlignment="Right" VerticalAlignment="Center" DockPanel.Dock="Right">luan1618</TextBlock>
+            </DockPanel>
+        </Grid>
+    </Grid>
+     
+    
+</Window>

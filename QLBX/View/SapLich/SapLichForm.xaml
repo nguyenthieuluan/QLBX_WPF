@@ -1,0 +1,256 @@
+﻿<UserControl x:Class="QLBX.View.SapLichForm"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:local="clr-namespace:QLBX.View"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            TextElement.FontWeight="Regular"
+            TextElement.FontSize="13"
+            TextOptions.TextFormattingMode="Ideal"
+            xmlns:sys="clr-namespace:System;assembly=mscorlib"
+            TextOptions.TextRenderingMode="Auto"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            DataContext="{StaticResource SapLichVM}"
+            Name="saplichForm"
+            Background="White"
+            xmlns:c="clr-namespace:QLBX"
+            mc:Ignorable="d" 
+            d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <c:tuyenConverter x:Key="myConverter"/>
+        <c:soLuongTuyenConverter x:Key="my1Converter"/>
+        <c:IndexConverter x:Key="IndexConverter"/>
+        <DataTemplate  x:Key="Template"  DataType="{x:Type sys:Boolean}">
+            <CheckBox  IsThreeState="True" IsChecked="{Binding Mode=OneWay}" />
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Background="Pink" Margin="5">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="Margin" Value="0 0 20 0"/>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <materialDesign:Card Grid.Row="0" Background="LightPink">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Combobox chọn tuyến-->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <TextBlock >Chọn Tuyến Xe</TextBlock>
+                        <ComboBox
+                            MinWidth="200" Background="LightBlue"
+                            x:Name="cbb" SelectedIndex="0"
+                            ItemsSource="{Binding ChiTietTuyens, Mode=TwoWay}" 
+                            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"> 
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Width="auto">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Margin="0 0 10 0" Grid.Column="0" Text="{Binding IDTUYEN}"></TextBlock>
+                                        <TextBlock Margin="0 0 20 0" Grid.Column="1" Text="{Binding BENDI}"></TextBlock>
+                                        <TextBlock Grid.Column="2" Text="{Binding BENDEN}"></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    
+                    <!--Chọn ngày sắp lịch-->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock>Chọn Ngày</TextBlock>
+                        <DatePicker x:Name="ngay" VerticalAlignment="Bottom"  Text="{Binding SelectedItem.NGAYDI, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" DisplayDateStart="{x:Static sys:DateTime.Today}"
+                          materialDesign:HintAssist.Hint="Ngày Khởi Hành" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                    </StackPanel>
+                </Grid>
+
+                <!--Row 1 số lượng chuyến xe-->
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock  Grid.Column="0"> Số lượng chuyến Xe</TextBlock>
+                    <TextBox Width="100" Text="{Binding SelectedItem.SOCHUYEN,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    <!--<ComboBox x:Name="cbb1" Grid.Column="1" Width="50" IsEditable="True"
+                      ItemsSource="{Binding ElementName=txtbSLCTD,Path=Text,Mode=OneWay,Converter={StaticResource my1Converter}}">
+                    </ComboBox>-->
+                </StackPanel>
+                
+                <!--Row 2 Chọn giờ bắt - GIỜ kết thúc-->
+                <!--<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <TextBlock>Giờ bắt đầu</TextBlock>
+                    <materialDesign:TimePicker Is24Hours="True" Text="{Binding SelectedItem.GIOBATDAU,StringFormat=t}"></materialDesign:TimePicker>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <TextBlock>Giờ kết thúc</TextBlock>
+                    <materialDesign:TimePicker Is24Hours="True" Text="{Binding SelectedItem.GIOKETTHUC,StringFormat=t}"></materialDesign:TimePicker>
+                </StackPanel>-->
+                
+                <!--Row 3 Thời gian nghỉ-->
+                <!--<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+                    <TextBlock >Thời gian nghỉ</TextBlock>
+                    <TextBox
+                        Text="{Binding THOIGIAN,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Row="3" Grid.Column="1"
+                        x:Name="PresetTimePicker"/>
+                </StackPanel>-->
+                
+            </Grid>
+        </materialDesign:Card>
+        <!--Row 2 Chi tiết tuyến-->
+        <Grid Grid.Row="1">
+            <GroupBox 
+            Header="Chi Tiết Chuyến" Background="Aqua" Margin="5">
+                <GroupBox.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+                        <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                    </Style>
+                </GroupBox.Resources>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0">Tên Tuyến</TextBlock>
+                    <TextBox Grid.Column="1" Text="{Binding ElementName=cbb,Path=SelectedItem.IDTUYEN}"></TextBox>
+
+                    <TextBlock Grid.Column="0" Grid.Row="1">Quản đường</TextBlock>
+                    <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding ElementName=cbb, Path=SelectedItem.QUANDUONG}"></TextBox>
+
+                    <TextBlock Grid.Column="0" Grid.Row="2">Giá vé mặc định</TextBlock>
+                    <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding ElementName=cbb, Path=SelectedItem.GIAVEMACDINH}"></TextBox>
+
+                    <TextBlock Grid.Column="2" Grid.Row="0">Số lượng tài xế</TextBlock>
+                    <TextBox Grid.Column="3" Grid.Row="0" x:Name="txtbSLTX" Text="{Binding ElementName=cbb,Path=SelectedItem.SOLUONGTAIXE}"></TextBox>
+
+                    <TextBlock Grid.Column="2" Grid.Row="1">Số lượng xe</TextBlock>
+                    <TextBox Grid.Column="3" Grid.Row="1" 
+                         x:Name="txtbSLX"
+                         Text="{Binding ElementName=cbb,Path=SelectedItem.SOLUONGXE}"></TextBox>
+
+                    <TextBlock Grid.Column="2" Grid.Row="2">Thời gian dự kiến</TextBlock>
+                    <TextBox Grid.Column="3" Grid.Row="2" 
+                         x:Name="txtbTGDK"
+                         Text="{Binding ElementName=cbb,Path=SelectedItem.THOIGIANDI}"></TextBox>
+
+                    <!--<TextBlock Grid.Column="0" Grid.Row="6">Số lượng chuyến tối đa.</TextBlock>-->
+
+
+
+                    <!--<TextBox Grid.Column="1" Grid.Row="6" x:Name="txtbSLCTD">
+                        <TextBox.Text>
+                            <MultiBinding UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource myConverter}">
+                                <Binding ElementName="txtbSLX" Path="Text" Mode="OneWay"/>
+                                <Binding ElementName="txtbTGDK" Path="Text" Mode="OneWay"/>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>-->
+                    
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <!--Row 3 Danh sách xe và danh sách nhân viên-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0" Header="Danh sách xe" Margin="5 5 5 5">
+                <ScrollViewer>
+                    <ListView ItemsSource="{Binding ElementName=cbb, Path=SelectedItem.XELIST}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="#" DisplayMemberBinding="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                         AncestorType={x:Type ListViewItem}}, 
+                                         Converter={StaticResource IndexConverter}}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox>
+                                            </TextBox>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Biển Số" DisplayMemberBinding="{Binding BIENSO}"></GridViewColumn>
+                                <GridViewColumn Header="Nhà Sản Xuất" DisplayMemberBinding="{Binding NHASANXUAT}"></GridViewColumn>
+                                <!--<GridViewColumn Header="Ngày Mua" DisplayMemberBinding="{Binding NGAYMUA}"></GridViewColumn>-->
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+            </GroupBox>
+            <!--Danh sach nhan vien-->
+            <GroupBox Grid.Column="1" Header="Danh sách nhân viên" Margin="5 5 5 5">
+                <ScrollViewer>
+                    <ListView ItemsSource="{Binding ElementName=cbb, Path=SelectedItem.NHANVIENLIST}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="#"
+                                                 DisplayMemberBinding="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                         AncestorType={x:Type ListViewItem}}, 
+                                         Converter={StaticResource IndexConverter}}"></GridViewColumn>
+                                <GridViewColumn Header="Id Nhân Viên" DisplayMemberBinding="{Binding IDNHANVIENXE}"></GridViewColumn>
+                                <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding HOTEN}"></GridViewColumn>
+                                <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding DIACHI}"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+            </GroupBox>
+        </Grid>
+
+        <!--Row 5-->
+        <Button Content="XUẤT" Grid.Row="3"
+                    Command="{Binding XuatCommand}"
+                    CommandParameter="{Binding ElementName=cbb1}" Height="Auto"></Button>
+        <!--<StackPanel Orientation="Horizontal" Grid.Row="4">
+            <TextBlock>Chọn Ngày</TextBlock>
+            <ComboBox>Chọn Ngày</ComboBox>
+            <Button Command="{Binding XuatCommand}"
+                    CommandParameter="{Binding ElementName=cbb1}" Height="Auto"></Button>
+        </StackPanel>-->
+    </Grid>
+    
+</UserControl>

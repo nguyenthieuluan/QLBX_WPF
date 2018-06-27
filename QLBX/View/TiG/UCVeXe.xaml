@@ -1,0 +1,281 @@
+﻿<UserControl x:Class="QLBX.FormChucNang.UCVeXe"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QLBX.FormChucNang"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             Name="vexe"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             DataContext="{StaticResource DVVM}">
+
+    <Grid x:Name="mainTicket" Background="#b4e0df" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28*"></ColumnDefinition>
+            <ColumnDefinition Width="12*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="30*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="30*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignTitleTextBlock}" TextAlignment="Center">SƠ ĐỒ XE luan</TextBlock>
+            <Grid Grid.Row="1" x:Name="frist">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="1st floor" TextAlignment="Center" FontSize="50" Grid.Row="0" Grid.Column="7" Grid.RowSpan="5">
+                    <TextBlock.LayoutTransform>
+                        <RotateTransform Angle="90"></RotateTransform>
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Height="10" Background="#2D1E69" Margin="0 5 0 5"></Grid>
+
+            <Grid Grid.Row="3" x:Name="second">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="2nd floor" TextAlignment="Center" FontSize="50" Grid.Row="0" Grid.Column="7" Grid.RowSpan="5">
+                    <TextBlock.LayoutTransform>
+                        <RotateTransform Angle="90"></RotateTransform>
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="frmbooking" Grid.Column="1" Background="#4ec3ca">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="25*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"></Grid>
+            <Grid Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                <Expander FontStyle="Italic" Background="#4ec3ca">
+                    <Expander.Header>
+                        <TextBlock Text="BOOKING" FontStyle="Normal" FontWeight="Bold" Foreground="#000d34" FontSize="15"></TextBlock></Expander.Header>
+                    <StackPanel>
+                        <!--<TextBlock></TextBlock>
+                        <TextBlock Foreground="White" TextAlignment="Center" Style="{StaticResource MaterialDesignTitleTextBlock}">
+                    BOOKING TICKET
+                        </TextBlock>
+                        <TextBlock></TextBlock>-->
+                        <TextBox x:Name="NameHK" Text="{Binding tenkhach, Mode=TwoWay}" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                            <materialDesign:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                    <materialDesign:PackIcon Kind="Account" />
+                                    <TextBlock>Customer Name</TextBlock>
+                                </StackPanel>
+                            </materialDesign:HintAssist.Hint>
+                        </TextBox>
+                        <TextBox x:Name="SdtKhach" Foreground="White" Text="{Binding sodienthoai, Mode=TwoWay}" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                            <materialDesign:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                    <materialDesign:PackIcon Kind="Phone" />
+                                    <TextBlock>Phone Number</TextBlock>
+                                </StackPanel>
+                            </materialDesign:HintAssist.Hint>
+                        </TextBox>
+                        <TextBox x:Name="diach" Foreground="White" Text="{Binding diachi, Mode=TwoWay}" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                            <materialDesign:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                                    <materialDesign:PackIcon Kind="Phone" />
+                                    <TextBlock>ADD</TextBlock>
+                                </StackPanel>
+                            </materialDesign:HintAssist.Hint>
+                        </TextBox>
+                        <StackPanel>
+                            <Expander Background="#4ec3ca" Foreground="White"  HorizontalAlignment="Left" Header="Ticket Booking">
+                                <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="0,0,0,0">
+                                    <ListView x:Name="listghe" ItemsSource="{Binding Dsghe,Mode=OneWayToSource}" Foreground="White" Background="#3580BF" MouseDoubleClick="mouse" >
+
+                                    </ListView>
+                                </StackPanel>
+                            </Expander>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="csat"  Background="White" GroupName="ThanhToan" HorizontalAlignment="Left" IsChecked="{Binding cast,Mode=OneWayToSource}">Cash</RadioButton>
+                            <Label></Label>
+                            <RadioButton GroupName="ThanhToan" IsChecked="{Binding book,Mode=OneWayToSource}" Background="White" HorizontalAlignment="Right">Booking</RadioButton>
+                        </StackPanel>
+                        <TextBlock></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="White"><Bold>Total: </Bold></TextBlock>
+                            <TextBlock x:Name="tongtien" Text="{Binding total, Mode=TwoWay}" Foreground="White"><Bold></Bold></TextBlock>
+                            <TextBlock Foreground="White"><Bold>$</Bold></TextBlock>
+                        </StackPanel>
+                        <TextBlock></TextBlock>
+                        <Button x:Name="buttoncommit" Command="{Binding commit}" CommandParameter="{Binding ElementName=vexe}" Click="Button_Click_1" Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="100" Background="#555555"  ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">
+                            COMMIT
+                        </Button>
+
+
+
+
+                    </StackPanel>
+                </Expander>
+                <Expander FontStyle="Italic" Background="#4ec3ca">
+                    <Expander.Header>
+                        <TextBlock Text="STATUS" FontStyle="Normal" FontWeight="Bold" Foreground="#000d34" FontSize="15"></TextBlock>
+                    </Expander.Header>
+                        <ListView x:Name="listvedadat">
+                            
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Number Chair" DisplayMemberBinding="{Binding soghedamua}"></GridViewColumn>
+                                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding trangthai}"></GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+
+                            <ListView.GroupStyle>
+                                <GroupStyle>
+                                    <GroupStyle.HeaderTemplate>
+                                        <DataTemplate>
+                                                <TextBlock Text="{Binding Name}"></TextBlock>
+                                        </DataTemplate>
+                                    </GroupStyle.HeaderTemplate>
+                                </GroupStyle>
+                            </ListView.GroupStyle>
+
+                            <!--<ListView.GroupStyle>
+                                <GroupStyle>
+                                    <GroupStyle.ContainerStyle>
+                                        <Style TargetType="{x:Type GroupItem}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Expander IsExpanded="False">
+                                                            <Expander.Header>
+                                                                <StackPanel Orientation="Horizontal">
+                                                                    
+                                                                 
+                                                                </StackPanel>
+                                                            </Expander.Header>
+                                                        </Expander>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </GroupStyle.ContainerStyle>
+                                </GroupStyle>
+                            </ListView.GroupStyle>-->
+
+
+
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding removeve}" CommandParameter="{Binding ElementName=listvedadat}">
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+
+                        </ListView>
+                    </Expander>
+
+                    <Expander FontStyle="Italic" Background="#4ec3ca">
+                        <Expander.Header>
+                            <TextBlock Text="DELIVER" FontStyle="Normal" FontWeight="Bold" Foreground="#000d34" FontSize="15"></TextBlock>
+                        </Expander.Header>
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Text="{Binding tenkhachhh, Mode=TwoWay}"  materialDesign:HintAssist.Hint="Name:" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox Text="{Binding diachihh, Mode=TwoWay}" materialDesign:HintAssist.Hint="Add:" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox Text="{Binding sdthh, Mode=TwoWay}" materialDesign:HintAssist.Hint="Phone number:" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox Text="{Binding tenhh, Mode=TwoWay}" materialDesign:HintAssist.Hint="Stuff:" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox Text="{Binding totalhh, Mode=TwoWay}" materialDesign:HintAssist.Hint="Total:" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <Button  Command="{Binding commithh}" CommandParameter="{Binding ElementName=vexe}" Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">COMMIT</Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Expander>
+
+                    <Expander FontStyle="Italic" Background="#4ec3ca">
+                        <Expander.Header>
+                            <TextBlock Text="DECRIPTION" FontStyle="Normal" FontWeight="Bold" Foreground="#000d34" FontSize="15"></TextBlock>
+                        </Expander.Header>
+                        <ListView x:Name="listhanghoa">
+
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Full Name" DisplayMemberBinding="{Binding hoten}"></GridViewColumn>
+                                    <GridViewColumn Header="ADD" DisplayMemberBinding="{Binding diachi}"></GridViewColumn>
+                                    <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding sdt}"></GridViewColumn>
+                                    <GridViewColumn Header="Stuff" DisplayMemberBinding="{Binding tenhang}"></GridViewColumn>
+                                    <GridViewColumn Header="Total" DisplayMemberBinding="{Binding giatien}"></GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+
+                            <!--<ListView.GroupStyle>
+                                <GroupStyle>
+                                    <GroupStyle.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"></TextBlock>
+                                        </DataTemplate>
+                                    </GroupStyle.HeaderTemplate>
+                                </GroupStyle>
+                            </ListView.GroupStyle>-->
+<!--
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction <Command="{Binding removeve}" CommandParameter="{Binding ElementName=listvedadat}">
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+-->
+                        </ListView>
+                    </Expander>
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2"></Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>

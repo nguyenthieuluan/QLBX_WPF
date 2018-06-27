@@ -1,0 +1,194 @@
+﻿<UserControl x:Class="QLBX.FormChucNang.UCQlyNhanvien"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QLBX.FormChucNang"
+            mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             Name="vexe"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             DataContext="{StaticResource QLNV}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            
+            <Grid>
+                <materialDesign:Card Margin="3 3 3 3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding hinh}" Height="270">
+                        </Image>
+                        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="5 5 5 5" Width="auto">
+                            <TextBox materialDesign:HintAssist.Hint="UserName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding username,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                            <TextBox materialDesign:HintAssist.Hint="Full Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding hoten,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                            <TextBox materialDesign:HintAssist.Hint="ADD" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding diachi,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                            <TextBox materialDesign:HintAssist.Hint="CMND" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding cmnd,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                            <DatePicker materialDesign:HintAssist.Hint="Brithday" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" SelectedDate="{Binding ngaysinh,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                            <TextBox materialDesign:HintAssist.Hint="Image" x:Name="layhinh" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding hinh,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MouseDoubleClick="TextBox_MouseDoubleClick"/>
+                            <TextBox materialDesign:HintAssist.Hint="Status" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding status,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                            <TextBox materialDesign:HintAssist.Hint="Phone Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding sdt,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <Button Command="{Binding addnv}" Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                                <materialDesign:PackIcon Kind="AccountPlus" />
+                            </Button>
+                            <Button Command="{Binding fixnv}" Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                                <materialDesign:PackIcon Kind="AccountSettingsVariant" />
+                            </Button>
+                            <Button Command="{Binding xoanhanvien}" Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                                <materialDesign:PackIcon Kind="AccountRemove" />
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+            </Grid>
+            
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid>
+                <materialDesign:Card Margin="3 3 3 3">
+                    <ListView ItemsSource="{Binding ListNV}" SelectedItem="{Binding Selecteditem,Mode=OneWayToSource}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="UserName" DisplayMemberBinding="{Binding UserName}"></GridViewColumn>
+                                <GridViewColumn Header="Full Name" DisplayMemberBinding="{Binding HoTen}"></GridViewColumn>
+                                <GridViewColumn Header="CMND" DisplayMemberBinding="{Binding CMND}"></GridViewColumn>
+                                <GridViewColumn Header="ADD" DisplayMemberBinding="{Binding DiaChi}"></GridViewColumn>
+                                <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding SDT}"></GridViewColumn>
+                                <GridViewColumn Header="Birthday" DisplayMemberBinding="{Binding NgaySinh}"></GridViewColumn>
+                                <GridViewColumn Header="Status" DisplayMemberBinding="{Binding status}"></GridViewColumn>
+                                <GridViewColumn Header="Image" DisplayMemberBinding="{Binding Hinh}"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </materialDesign:Card>
+            </Grid>
+            
+        </Grid>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <materialDesign:Card Margin="5 5 5 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="../Img/admin.jpg" Height="270">
+                    </Image>
+                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="5 5 5 5" Width="auto">
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Button Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                            <materialDesign:PackIcon Kind="AccountPlus" />
+                        </Button>
+                        <Button Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                            <materialDesign:PackIcon Kind="AccountSettingsVariant" />
+                        </Button>
+                        <Button Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                            <materialDesign:PackIcon Kind="AccountRemove" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Column="1" Margin="5 5 5 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="../Img/admin.jpg" Height="270">
+                    </Image>
+                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="5 5 5 5" Width="auto">
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox materialDesign:HintAssist.Hint="Floating Hint" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Button Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                            _ADD
+                        </Button>
+                        <Button Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                            _UPDATE
+                        </Button>
+                        <Button Margin="5 5 5 5" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                            _REMOVE
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <materialDesign:Card Grid.Column="0" Margin="5 5 5 5">
+                <ListView>
+
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Number Chair" DisplayMemberBinding="{Binding soghedamua}"></GridViewColumn>
+                            <GridViewColumn Header="Number Chair" DisplayMemberBinding="{Binding soghedamua}"></GridViewColumn>
+                            <GridViewColumn Header="Number Chair" DisplayMemberBinding="{Binding soghedamua}"></GridViewColumn>
+                            <GridViewColumn Header="Number Chair" DisplayMemberBinding="{Binding soghedamua}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+
+                    
+
+                </ListView>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Column="1" Margin="5 5 5 5">
+                
+            </materialDesign:Card>
+        </Grid>-->
+    </Grid>
+
+</UserControl>

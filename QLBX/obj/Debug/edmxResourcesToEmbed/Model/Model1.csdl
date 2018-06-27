@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBX1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="QLBXEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BENXEs" EntityType="QLBX1Model.BENXE" />
+    <EntitySet Name="CHITIETVEs" EntityType="QLBX1Model.CHITIETVE" />
+    <EntitySet Name="GIOKHOIHANHs" EntityType="QLBX1Model.GIOKHOIHANH" />
+    <EntitySet Name="GUIHANGHOAs" EntityType="QLBX1Model.GUIHANGHOA" />
+    <EntitySet Name="KHACHDIXEs" EntityType="QLBX1Model.KHACHDIXE" />
+    <EntitySet Name="LOAIBANGLAIs" EntityType="QLBX1Model.LOAIBANGLAI" />
+    <EntitySet Name="LOAIXEs" EntityType="QLBX1Model.LOAIXE" />
+    <EntitySet Name="NhanViens" EntityType="QLBX1Model.NhanVien" />
+    <EntitySet Name="NHANVIENXEs" EntityType="QLBX1Model.NHANVIENXE" />
+    <EntitySet Name="PERMISSIONs" EntityType="QLBX1Model.PERMISSION" />
+    <EntitySet Name="sysdiagrams" EntityType="QLBX1Model.sysdiagram" />
+    <EntitySet Name="USERs" EntityType="QLBX1Model.USER" />
+    <EntitySet Name="VEXEs" EntityType="QLBX1Model.VEXE" />
+    <EntitySet Name="XEs" EntityType="QLBX1Model.XE" />
+    <AssociationSet Name="FK_CHITIETVE_VEXE" Association="QLBX1Model.FK_CHITIETVE_VEXE">
+      <End Role="VEXE" EntitySet="VEXEs" />
+      <End Role="CHITIETVE" EntitySet="CHITIETVEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETVEXE_KHACHDIXE" Association="QLBX1Model.FK_CHITIETVEXE_KHACHDIXE">
+      <End Role="KHACHDIXE" EntitySet="KHACHDIXEs" />
+      <End Role="CHITIETVE" EntitySet="CHITIETVEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHANVIENXE_LOAIBANGLAI" Association="QLBX1Model.FK_NHANVIENXE_LOAIBANGLAI">
+      <End Role="LOAIBANGLAI" EntitySet="LOAIBANGLAIs" />
+      <End Role="NHANVIENXE" EntitySet="NHANVIENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XE_LOAIXE" Association="QLBX1Model.FK_XE_LOAIXE">
+      <End Role="LOAIXE" EntitySet="LOAIXEs" />
+      <End Role="XE" EntitySet="XEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_USER" Association="QLBX1Model.FK_NhanVien_USER">
+      <End Role="USER" EntitySet="USERs" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_PERMISSION1" Association="QLBX1Model.FK_USER_PERMISSION1">
+      <End Role="PERMISSION" EntitySet="PERMISSIONs" />
+      <End Role="USER" EntitySet="USERs" />
+    </AssociationSet>
+    <EntitySet Name="TUYENXEs" EntityType="QLBX1Model.TUYENXE" />
+    <AssociationSet Name="FK_TUYENXE_BENXE" Association="QLBX1Model.FK_TUYENXE_BENXE">
+      <End Role="BENXE" EntitySet="BENXEs" />
+      <End Role="TUYENXE" EntitySet="TUYENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TUYENXE_BENXE1" Association="QLBX1Model.FK_TUYENXE_BENXE1">
+      <End Role="BENXE" EntitySet="BENXEs" />
+      <End Role="TUYENXE" EntitySet="TUYENXEs" />
+    </AssociationSet>
+    <EntitySet Name="CHUYENXEs" EntityType="QLBX1Model.CHUYENXE" />
+    <AssociationSet Name="FK_CHUYENXE_GIOKHOIHANH" Association="QLBX1Model.FK_CHUYENXE_GIOKHOIHANH">
+      <End Role="GIOKHOIHANH" EntitySet="GIOKHOIHANHs" />
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUYENXE_NHANVIENXE" Association="QLBX1Model.FK_CHUYENXE_NHANVIENXE">
+      <End Role="NHANVIENXE" EntitySet="NHANVIENXEs" />
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUYENXE_NHANVIENXE1" Association="QLBX1Model.FK_CHUYENXE_NHANVIENXE1">
+      <End Role="NHANVIENXE" EntitySet="NHANVIENXEs" />
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUYENXE_NHANVIENXE2" Association="QLBX1Model.FK_CHUYENXE_NHANVIENXE2">
+      <End Role="NHANVIENXE" EntitySet="NHANVIENXEs" />
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUYENXE_NHANVIENXE3" Association="QLBX1Model.FK_CHUYENXE_NHANVIENXE3">
+      <End Role="NHANVIENXE" EntitySet="NHANVIENXEs" />
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUYENXE_TUYENXE" Association="QLBX1Model.FK_CHUYENXE_TUYENXE">
+      <End Role="TUYENXE" EntitySet="TUYENXEs" />
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUYENXE_XE" Association="QLBX1Model.FK_CHUYENXE_XE">
+      <End Role="XE" EntitySet="XEs" />
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GUIHANGHOA_CHUYENXE" Association="QLBX1Model.FK_GUIHANGHOA_CHUYENXE">
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+      <End Role="GUIHANGHOA" EntitySet="GUIHANGHOAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GUIHANGHOA_CHUYENXE1" Association="QLBX1Model.FK_GUIHANGHOA_CHUYENXE1">
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+      <End Role="GUIHANGHOA" EntitySet="GUIHANGHOAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VEXE_CHUYENXE" Association="QLBX1Model.FK_VEXE_CHUYENXE">
+      <End Role="CHUYENXE" EntitySet="CHUYENXEs" />
+      <End Role="VEXE" EntitySet="VEXEs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BENXE">
+    <Key>
+      <PropertyRef Name="IDBEN" />
+    </Key>
+    <Property Name="IDBEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENBEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TINH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TUYENXEs" Relationship="QLBX1Model.FK_TUYENXE_BENXE" FromRole="BENXE" ToRole="TUYENXE" />
+    <NavigationProperty Name="TUYENXEs1" Relationship="QLBX1Model.FK_TUYENXE_BENXE1" FromRole="BENXE" ToRole="TUYENXE" />
+  </EntityType>
+  <EntityType Name="CHITIETVE">
+    <Key>
+      <PropertyRef Name="IDCTVX" />
+    </Key>
+    <Property Name="IDCTVX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SOGHE" Type="Int32" />
+    <Property Name="IDKHACH" Type="Int32" />
+    <Property Name="IDVE" Type="Int32" />
+    <NavigationProperty Name="VEXE" Relationship="QLBX1Model.FK_CHITIETVE_VEXE" FromRole="CHITIETVE" ToRole="VEXE" />
+    <NavigationProperty Name="KHACHDIXE" Relationship="QLBX1Model.FK_CHITIETVEXE_KHACHDIXE" FromRole="CHITIETVE" ToRole="KHACHDIXE" />
+  </EntityType>
+  <EntityType Name="GIOKHOIHANH">
+    <Key>
+      <PropertyRef Name="GIO" />
+    </Key>
+    <Property Name="GIO" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="CHUYENXEs" Relationship="QLBX1Model.FK_CHUYENXE_GIOKHOIHANH" FromRole="GIOKHOIHANH" ToRole="CHUYENXE" />
+  </EntityType>
+  <EntityType Name="GUIHANGHOA">
+    <Key>
+      <PropertyRef Name="IDKHACHGUIHANG" />
+    </Key>
+    <Property Name="IDKHACHGUIHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDCHUYEN" Type="Int32" />
+    <Property Name="TENHANG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="GIATIEN" Type="Int32" />
+    <NavigationProperty Name="CHUYENXE" Relationship="QLBX1Model.FK_GUIHANGHOA_CHUYENXE" FromRole="GUIHANGHOA" ToRole="CHUYENXE" />
+    <NavigationProperty Name="CHUYENXE1" Relationship="QLBX1Model.FK_GUIHANGHOA_CHUYENXE1" FromRole="GUIHANGHOA" ToRole="CHUYENXE" />
+  </EntityType>
+  <EntityType Name="KHACHDIXE">
+    <Key>
+      <PropertyRef Name="IDKHACH" />
+    </Key>
+    <Property Name="IDKHACH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHITIETVEs" Relationship="QLBX1Model.FK_CHITIETVEXE_KHACHDIXE" FromRole="KHACHDIXE" ToRole="CHITIETVE" />
+  </EntityType>
+  <EntityType Name="LOAIBANGLAI">
+    <Key>
+      <PropertyRef Name="IDLOAI" />
+    </Key>
+    <Property Name="IDLOAI" Type="Int32" Nullable="false" />
+    <Property Name="TENLOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NHANVIENXEs" Relationship="QLBX1Model.FK_NHANVIENXE_LOAIBANGLAI" FromRole="LOAIBANGLAI" ToRole="NHANVIENXE" />
+  </EntityType>
+  <EntityType Name="LOAIXE">
+    <Key>
+      <PropertyRef Name="IDLOAI" />
+    </Key>
+    <Property Name="IDLOAI" Type="Int32" Nullable="false" />
+    <Property Name="TENLOAI" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="SOCHONGOI" Type="Int32" />
+    <Property Name="HESOGIAVE" Type="Double" />
+    <NavigationProperty Name="XEs" Relationship="QLBX1Model.FK_XE_LOAIXE" FromRole="LOAIXE" ToRole="XE" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="Hinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="USER" Relationship="QLBX1Model.FK_NhanVien_USER" FromRole="NhanVien" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="NHANVIENXE">
+    <Key>
+      <PropertyRef Name="IDNHANVIENXE" />
+    </Key>
+    <Property Name="IDNHANVIENXE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAMSINH" Type="DateTime" Precision="0" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BANGLAI" Type="Int32" />
+    <Property Name="NGAYTHAMGIA" Type="DateTime" Precision="0" />
+    <Property Name="LOAINHANVIEN" Type="Int32" />
+    <Property Name="BENHIENTAI" Type="Int32" />
+    <NavigationProperty Name="LOAIBANGLAI" Relationship="QLBX1Model.FK_NHANVIENXE_LOAIBANGLAI" FromRole="NHANVIENXE" ToRole="LOAIBANGLAI" />
+    <NavigationProperty Name="CHUYENXEs" Relationship="QLBX1Model.FK_CHUYENXE_NHANVIENXE" FromRole="NHANVIENXE" ToRole="CHUYENXE" />
+    <NavigationProperty Name="CHUYENXEs1" Relationship="QLBX1Model.FK_CHUYENXE_NHANVIENXE1" FromRole="NHANVIENXE" ToRole="CHUYENXE" />
+    <NavigationProperty Name="CHUYENXEs2" Relationship="QLBX1Model.FK_CHUYENXE_NHANVIENXE2" FromRole="NHANVIENXE" ToRole="CHUYENXE" />
+    <NavigationProperty Name="CHUYENXEs3" Relationship="QLBX1Model.FK_CHUYENXE_NHANVIENXE3" FromRole="NHANVIENXE" ToRole="CHUYENXE" />
+  </EntityType>
+  <EntityType Name="PERMISSION">
+    <Key>
+      <PropertyRef Name="IDPermission" />
+    </Key>
+    <Property Name="IDPermission" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="NamePermission" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="ve" Type="Boolean" />
+    <Property Name="chuyen" Type="Boolean" />
+    <Property Name="tuyen" Type="Boolean" />
+    <Property Name="thongke" Type="Boolean" />
+    <Property Name="nhanvien" Type="Boolean" />
+    <Property Name="khachdixe" Type="Boolean" />
+    <Property Name="khachguihang" Type="Boolean" />
+    <Property Name="hanghoa" Type="Boolean" />
+    <Property Name="nhanvienxe" Type="Boolean" />
+    <NavigationProperty Name="USERs" Relationship="QLBX1Model.FK_USER_PERMISSION1" FromRole="PERMISSION" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="IDPermission" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="NhanVien" Relationship="QLBX1Model.FK_NhanVien_USER" FromRole="USER" ToRole="NhanVien" />
+    <NavigationProperty Name="PERMISSION" Relationship="QLBX1Model.FK_USER_PERMISSION1" FromRole="USER" ToRole="PERMISSION" />
+  </EntityType>
+  <EntityType Name="VEXE">
+    <Key>
+      <PropertyRef Name="IDVE" />
+    </Key>
+    <Property Name="IDVE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCHUYEN" Type="Int32" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TRANGTHAI" Type="Boolean" />
+    <NavigationProperty Name="CHITIETVEs" Relationship="QLBX1Model.FK_CHITIETVE_VEXE" FromRole="VEXE" ToRole="CHITIETVE" />
+    <NavigationProperty Name="CHUYENXE" Relationship="QLBX1Model.FK_VEXE_CHUYENXE" FromRole="VEXE" ToRole="CHUYENXE" />
+  </EntityType>
+  <EntityType Name="XE">
+    <Key>
+      <PropertyRef Name="BIENSO" />
+    </Key>
+    <Property Name="BIENSO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NHASANXUAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYMUA" Type="DateTime" Precision="0" />
+    <Property Name="IDLOAI" Type="Int32" />
+    <Property Name="BENHIENTAI" Type="Int32" />
+    <NavigationProperty Name="LOAIXE" Relationship="QLBX1Model.FK_XE_LOAIXE" FromRole="XE" ToRole="LOAIXE" />
+    <NavigationProperty Name="CHUYENXEs" Relationship="QLBX1Model.FK_CHUYENXE_XE" FromRole="XE" ToRole="CHUYENXE" />
+  </EntityType>
+  <Association Name="FK_CHITIETVE_VEXE">
+    <End Type="QLBX1Model.VEXE" Role="VEXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHITIETVE" Role="CHITIETVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VEXE">
+        <PropertyRef Name="IDVE" />
+      </Principal>
+      <Dependent Role="CHITIETVE">
+        <PropertyRef Name="IDVE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETVEXE_KHACHDIXE">
+    <End Type="QLBX1Model.KHACHDIXE" Role="KHACHDIXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHITIETVE" Role="CHITIETVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHDIXE">
+        <PropertyRef Name="IDKHACH" />
+      </Principal>
+      <Dependent Role="CHITIETVE">
+        <PropertyRef Name="IDKHACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHANVIENXE_LOAIBANGLAI">
+    <End Type="QLBX1Model.LOAIBANGLAI" Role="LOAIBANGLAI" Multiplicity="0..1" />
+    <End Type="QLBX1Model.NHANVIENXE" Role="NHANVIENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIBANGLAI">
+        <PropertyRef Name="IDLOAI" />
+      </Principal>
+      <Dependent Role="NHANVIENXE">
+        <PropertyRef Name="BANGLAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XE_LOAIXE">
+    <End Type="QLBX1Model.LOAIXE" Role="LOAIXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.XE" Role="XE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIXE">
+        <PropertyRef Name="IDLOAI" />
+      </Principal>
+      <Dependent Role="XE">
+        <PropertyRef Name="IDLOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_USER">
+    <End Type="QLBX1Model.USER" Role="USER" Multiplicity="1" />
+    <End Type="QLBX1Model.NhanVien" Role="NhanVien" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_PERMISSION1">
+    <End Type="QLBX1Model.PERMISSION" Role="PERMISSION" Multiplicity="0..1" />
+    <End Type="QLBX1Model.USER" Role="USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERMISSION">
+        <PropertyRef Name="IDPermission" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="IDPermission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TUYENXE">
+    <Key>
+      <PropertyRef Name="IDTUYEN" />
+    </Key>
+    <Property Name="IDTUYEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BENDI" Type="Int32" />
+    <Property Name="BENDEN" Type="Int32" />
+    <Property Name="GIAVEMATDINH" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NGAYCAPNHATGIA" Type="DateTime" Precision="0" />
+    <Property Name="QUANDUONG" Type="Int32" />
+    <Property Name="THOIGIANDI" Type="Time" Precision="7" />
+    <NavigationProperty Name="BENXE" Relationship="QLBX1Model.FK_TUYENXE_BENXE" FromRole="TUYENXE" ToRole="BENXE" />
+    <NavigationProperty Name="BENXE1" Relationship="QLBX1Model.FK_TUYENXE_BENXE1" FromRole="TUYENXE" ToRole="BENXE" />
+    <NavigationProperty Name="CHUYENXEs" Relationship="QLBX1Model.FK_CHUYENXE_TUYENXE" FromRole="TUYENXE" ToRole="CHUYENXE" />
+  </EntityType>
+  <Association Name="FK_TUYENXE_BENXE">
+    <End Type="QLBX1Model.BENXE" Role="BENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.TUYENXE" Role="TUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BENXE">
+        <PropertyRef Name="IDBEN" />
+      </Principal>
+      <Dependent Role="TUYENXE">
+        <PropertyRef Name="BENDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TUYENXE_BENXE1">
+    <End Type="QLBX1Model.BENXE" Role="BENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.TUYENXE" Role="TUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BENXE">
+        <PropertyRef Name="IDBEN" />
+      </Principal>
+      <Dependent Role="TUYENXE">
+        <PropertyRef Name="BENDI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CHUYENXE">
+    <Key>
+      <PropertyRef Name="IDCHUYEN" />
+    </Key>
+    <Property Name="IDCHUYEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDTUYEN" Type="Int32" />
+    <Property Name="BIENSO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYKHOIHANH" Type="DateTime" Precision="0" />
+    <Property Name="THOIGIANKHOIHANH" Type="Time" Precision="7" />
+    <Property Name="THOIGIANDEN" Type="DateTime" Precision="3" />
+    <Property Name="GIAVECHUYEN" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IDNV1" Type="Int32" />
+    <Property Name="IDNV2" Type="Int32" />
+    <Property Name="IDNV3" Type="Int32" />
+    <Property Name="IDNV4" Type="Int32" />
+    <NavigationProperty Name="GIOKHOIHANH" Relationship="QLBX1Model.FK_CHUYENXE_GIOKHOIHANH" FromRole="CHUYENXE" ToRole="GIOKHOIHANH" />
+    <NavigationProperty Name="NHANVIENXE" Relationship="QLBX1Model.FK_CHUYENXE_NHANVIENXE" FromRole="CHUYENXE" ToRole="NHANVIENXE" />
+    <NavigationProperty Name="NHANVIENXE1" Relationship="QLBX1Model.FK_CHUYENXE_NHANVIENXE1" FromRole="CHUYENXE" ToRole="NHANVIENXE" />
+    <NavigationProperty Name="NHANVIENXE2" Relationship="QLBX1Model.FK_CHUYENXE_NHANVIENXE2" FromRole="CHUYENXE" ToRole="NHANVIENXE" />
+    <NavigationProperty Name="NHANVIENXE3" Relationship="QLBX1Model.FK_CHUYENXE_NHANVIENXE3" FromRole="CHUYENXE" ToRole="NHANVIENXE" />
+    <NavigationProperty Name="TUYENXE" Relationship="QLBX1Model.FK_CHUYENXE_TUYENXE" FromRole="CHUYENXE" ToRole="TUYENXE" />
+    <NavigationProperty Name="XE" Relationship="QLBX1Model.FK_CHUYENXE_XE" FromRole="CHUYENXE" ToRole="XE" />
+    <NavigationProperty Name="GUIHANGHOAs" Relationship="QLBX1Model.FK_GUIHANGHOA_CHUYENXE" FromRole="CHUYENXE" ToRole="GUIHANGHOA" />
+    <NavigationProperty Name="GUIHANGHOAs1" Relationship="QLBX1Model.FK_GUIHANGHOA_CHUYENXE1" FromRole="CHUYENXE" ToRole="GUIHANGHOA" />
+    <NavigationProperty Name="VEXEs" Relationship="QLBX1Model.FK_VEXE_CHUYENXE" FromRole="CHUYENXE" ToRole="VEXE" />
+  </EntityType>
+  <Association Name="FK_CHUYENXE_GIOKHOIHANH">
+    <End Type="QLBX1Model.GIOKHOIHANH" Role="GIOKHOIHANH" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GIOKHOIHANH">
+        <PropertyRef Name="GIO" />
+      </Principal>
+      <Dependent Role="CHUYENXE">
+        <PropertyRef Name="THOIGIANKHOIHANH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUYENXE_NHANVIENXE">
+    <End Type="QLBX1Model.NHANVIENXE" Role="NHANVIENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIENXE">
+        <PropertyRef Name="IDNHANVIENXE" />
+      </Principal>
+      <Dependent Role="CHUYENXE">
+        <PropertyRef Name="IDNV1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUYENXE_NHANVIENXE1">
+    <End Type="QLBX1Model.NHANVIENXE" Role="NHANVIENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIENXE">
+        <PropertyRef Name="IDNHANVIENXE" />
+      </Principal>
+      <Dependent Role="CHUYENXE">
+        <PropertyRef Name="IDNV2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUYENXE_NHANVIENXE2">
+    <End Type="QLBX1Model.NHANVIENXE" Role="NHANVIENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIENXE">
+        <PropertyRef Name="IDNHANVIENXE" />
+      </Principal>
+      <Dependent Role="CHUYENXE">
+        <PropertyRef Name="IDNV3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUYENXE_NHANVIENXE3">
+    <End Type="QLBX1Model.NHANVIENXE" Role="NHANVIENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIENXE">
+        <PropertyRef Name="IDNHANVIENXE" />
+      </Principal>
+      <Dependent Role="CHUYENXE">
+        <PropertyRef Name="IDNV4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUYENXE_TUYENXE">
+    <End Type="QLBX1Model.TUYENXE" Role="TUYENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TUYENXE">
+        <PropertyRef Name="IDTUYEN" />
+      </Principal>
+      <Dependent Role="CHUYENXE">
+        <PropertyRef Name="IDTUYEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUYENXE_XE">
+    <End Type="QLBX1Model.XE" Role="XE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XE">
+        <PropertyRef Name="BIENSO" />
+      </Principal>
+      <Dependent Role="CHUYENXE">
+        <PropertyRef Name="BIENSO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GUIHANGHOA_CHUYENXE">
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.GUIHANGHOA" Role="GUIHANGHOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUYENXE">
+        <PropertyRef Name="IDCHUYEN" />
+      </Principal>
+      <Dependent Role="GUIHANGHOA">
+        <PropertyRef Name="IDCHUYEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GUIHANGHOA_CHUYENXE1">
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.GUIHANGHOA" Role="GUIHANGHOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUYENXE">
+        <PropertyRef Name="IDCHUYEN" />
+      </Principal>
+      <Dependent Role="GUIHANGHOA">
+        <PropertyRef Name="IDCHUYEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VEXE_CHUYENXE">
+    <End Type="QLBX1Model.CHUYENXE" Role="CHUYENXE" Multiplicity="0..1" />
+    <End Type="QLBX1Model.VEXE" Role="VEXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUYENXE">
+        <PropertyRef Name="IDCHUYEN" />
+      </Principal>
+      <Dependent Role="VEXE">
+        <PropertyRef Name="IDCHUYEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

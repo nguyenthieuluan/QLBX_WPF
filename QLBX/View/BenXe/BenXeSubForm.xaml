@@ -1,0 +1,25 @@
+﻿<Window x:Class="QLBX.FormChucNang.BenXeSubForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLBX.FormChucNang"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Background="Pink"
+        DataContext="{StaticResource BenXeVM}"
+        Title="Danh Sách Tài Xế" Height="450" Width="800">
+    <StackPanel>
+        <ListView ItemsSource="{Binding NhanVienXeSubList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id Nhân Viên" DisplayMemberBinding="{Binding IDNHANVIENXE}"></GridViewColumn>
+                    <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding HOTEN}"></GridViewColumn>
+                    <!--<GridViewColumn Header="CMND" DisplayMemberBinding="{Binding CMND}"></GridViewColumn>-->
+                    <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding DIACHI}"></GridViewColumn>
+                    <GridViewColumn Header="Bằng Lái" DisplayMemberBinding="{Binding LOAIBANGLAI.TENLOAI}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>

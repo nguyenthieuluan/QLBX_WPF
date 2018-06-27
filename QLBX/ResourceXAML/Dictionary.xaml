@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewmodel="clr-namespace:QLBX.ViewModel">
+    <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:LoginVM x:Key="LoginVM"></viewmodel:LoginVM>
+    <viewmodel:TaiXeVM x:Key="TaiXeVM"></viewmodel:TaiXeVM>
+    <viewmodel:QuanLyXeVM x:Key="QuanLyXeVM"></viewmodel:QuanLyXeVM>
+    <viewmodel:TuyenXeVM x:Key="TuyenXeVM"></viewmodel:TuyenXeVM>
+    <viewmodel:ChuyenXeVM x:Key="ChuyenXeVM"></viewmodel:ChuyenXeVM>
+    <viewmodel:SapLichVM x:Key="SapLichVM"></viewmodel:SapLichVM>
+    <viewmodel:LichTrinhVM x:Key="LichTrinhVM"></viewmodel:LichTrinhVM>
+    <viewmodel:BenXeVM x:Key="BenXeVM"></viewmodel:BenXeVM>
+    <viewmodel:SaoLuuVM x:Key="SaoLuuVM"></viewmodel:SaoLuuVM>
+    <viewmodel:ThongKeVM x:Key="ThongKe"></viewmodel:ThongKeVM>
+    <viewmodel:MainViewModelTiG x:Key="MainTiGVM"></viewmodel:MainViewModelTiG>
+    
+    <viewmodel:DatVeVM x:Key="DVVM"></viewmodel:DatVeVM>
+
+    <viewmodel:ControlBarVM x:Key="CBVM"></viewmodel:ControlBarVM>
+    <viewmodel:QLNhanVienVM x:Key="QLNV"></viewmodel:QLNhanVienVM>
+    <viewmodel:PhanQuyenVM x:Key="QLPQ"></viewmodel:PhanQuyenVM>
+
+</ResourceDictionary>

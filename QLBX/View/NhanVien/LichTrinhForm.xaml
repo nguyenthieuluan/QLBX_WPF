@@ -1,0 +1,30 @@
+﻿<Window x:Class="QLBX.FormChucNang.LichTrinhForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLBX.FormChucNang"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13" WindowStartupLocation="CenterScreen"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        DataContext="{StaticResource TaiXeVM}"
+        Title="Lịch trình" Height="450" Width="800">
+    <Grid>
+        <ListView ItemsSource="{Binding LichTrinhNhanVienList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id Tuyến" DisplayMemberBinding="{Binding IDTUYEN}"></GridViewColumn>
+                    <GridViewColumn Header="Bến Số" DisplayMemberBinding="{Binding BIENSO}"></GridViewColumn>
+                    <GridViewColumn Header="Ngày Khởi Hành" DisplayMemberBinding="{Binding NGAYKHOIHANH}"></GridViewColumn>
+                    <GridViewColumn Header="Thời Gian Khởi Hành" DisplayMemberBinding="{Binding THOIGIANKHOIHANH}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

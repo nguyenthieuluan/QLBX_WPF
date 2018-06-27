@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLBX1ModelStoreContainer" CdmEntityContainer="QLBXEntities">
+    <EntitySetMapping Name="BENXEs">
+      <EntityTypeMapping TypeName="QLBX1Model.BENXE">
+        <MappingFragment StoreEntitySet="BENXE">
+          <ScalarProperty Name="TINH" ColumnName="TINH" />
+          <ScalarProperty Name="TENBEN" ColumnName="TENBEN" />
+          <ScalarProperty Name="IDBEN" ColumnName="IDBEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHITIETVEs">
+      <EntityTypeMapping TypeName="QLBX1Model.CHITIETVE">
+        <MappingFragment StoreEntitySet="CHITIETVE">
+          <ScalarProperty Name="IDVE" ColumnName="IDVE" />
+          <ScalarProperty Name="IDKHACH" ColumnName="IDKHACH" />
+          <ScalarProperty Name="SOGHE" ColumnName="SOGHE" />
+          <ScalarProperty Name="IDCTVX" ColumnName="IDCTVX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIOKHOIHANHs">
+      <EntityTypeMapping TypeName="QLBX1Model.GIOKHOIHANH">
+        <MappingFragment StoreEntitySet="GIOKHOIHANH">
+          <ScalarProperty Name="GIO" ColumnName="GIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GUIHANGHOAs">
+      <EntityTypeMapping TypeName="QLBX1Model.GUIHANGHOA">
+        <MappingFragment StoreEntitySet="GUIHANGHOA">
+          <ScalarProperty Name="GIATIEN" ColumnName="GIATIEN" />
+          <ScalarProperty Name="TENHANG" ColumnName="TENHANG" />
+          <ScalarProperty Name="IDCHUYEN" ColumnName="IDCHUYEN" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="IDKHACHGUIHANG" ColumnName="IDKHACHGUIHANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHDIXEs">
+      <EntityTypeMapping TypeName="QLBX1Model.KHACHDIXE">
+        <MappingFragment StoreEntitySet="KHACHDIXE">
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="IDKHACH" ColumnName="IDKHACH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAIBANGLAIs">
+      <EntityTypeMapping TypeName="QLBX1Model.LOAIBANGLAI">
+        <MappingFragment StoreEntitySet="LOAIBANGLAI">
+          <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+          <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAIXEs">
+      <EntityTypeMapping TypeName="QLBX1Model.LOAIXE">
+        <MappingFragment StoreEntitySet="LOAIXE">
+          <ScalarProperty Name="HESOGIAVE" ColumnName="HESOGIAVE" />
+          <ScalarProperty Name="SOCHONGOI" ColumnName="SOCHONGOI" />
+          <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+          <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="QLBX1Model.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Hinh" ColumnName="Hinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENXEs">
+      <EntityTypeMapping TypeName="QLBX1Model.NHANVIENXE">
+        <MappingFragment StoreEntitySet="NHANVIENXE">
+          <ScalarProperty Name="BENHIENTAI" ColumnName="BENHIENTAI" />
+          <ScalarProperty Name="LOAINHANVIEN" ColumnName="LOAINHANVIEN" />
+          <ScalarProperty Name="NGAYTHAMGIA" ColumnName="NGAYTHAMGIA" />
+          <ScalarProperty Name="BANGLAI" ColumnName="BANGLAI" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="NAMSINH" ColumnName="NAMSINH" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="IDNHANVIENXE" ColumnName="IDNHANVIENXE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERMISSIONs">
+      <EntityTypeMapping TypeName="QLBX1Model.PERMISSION">
+        <MappingFragment StoreEntitySet="PERMISSION">
+          <ScalarProperty Name="nhanvienxe" ColumnName="nhanvienxe" />
+          <ScalarProperty Name="hanghoa" ColumnName="hanghoa" />
+          <ScalarProperty Name="khachguihang" ColumnName="khachguihang" />
+          <ScalarProperty Name="khachdixe" ColumnName="khachdixe" />
+          <ScalarProperty Name="nhanvien" ColumnName="nhanvien" />
+          <ScalarProperty Name="thongke" ColumnName="thongke" />
+          <ScalarProperty Name="tuyen" ColumnName="tuyen" />
+          <ScalarProperty Name="chuyen" ColumnName="chuyen" />
+          <ScalarProperty Name="ve" ColumnName="ve" />
+          <ScalarProperty Name="NamePermission" ColumnName="NamePermission" />
+          <ScalarProperty Name="IDPermission" ColumnName="IDPermission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLBX1Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="QLBX1Model.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="IDPermission" ColumnName="IDPermission" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEXEs">
+      <EntityTypeMapping TypeName="QLBX1Model.VEXE">
+        <MappingFragment StoreEntitySet="VEXE">
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="IDCHUYEN" ColumnName="IDCHUYEN" />
+          <ScalarProperty Name="IDVE" ColumnName="IDVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XEs">
+      <EntityTypeMapping TypeName="QLBX1Model.XE">
+        <MappingFragment StoreEntitySet="XE">
+          <ScalarProperty Name="BENHIENTAI" ColumnName="BENHIENTAI" />
+          <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+          <ScalarProperty Name="NGAYMUA" ColumnName="NGAYMUA" />
+          <ScalarProperty Name="NHASANXUAT" ColumnName="NHASANXUAT" />
+          <ScalarProperty Name="BIENSO" ColumnName="BIENSO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TUYENXEs">
+      <EntityTypeMapping TypeName="QLBX1Model.TUYENXE">
+        <MappingFragment StoreEntitySet="TUYENXE">
+          <ScalarProperty Name="THOIGIANDI" ColumnName="THOIGIANDI" />
+          <ScalarProperty Name="QUANDUONG" ColumnName="QUANDUONG" />
+          <ScalarProperty Name="NGAYCAPNHATGIA" ColumnName="NGAYCAPNHATGIA" />
+          <ScalarProperty Name="GIAVEMATDINH" ColumnName="GIAVEMATDINH" />
+          <ScalarProperty Name="BENDEN" ColumnName="BENDEN" />
+          <ScalarProperty Name="BENDI" ColumnName="BENDI" />
+          <ScalarProperty Name="IDTUYEN" ColumnName="IDTUYEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHUYENXEs">
+      <EntityTypeMapping TypeName="QLBX1Model.CHUYENXE">
+        <MappingFragment StoreEntitySet="CHUYENXE">
+          <ScalarProperty Name="IDNV4" ColumnName="IDNV4" />
+          <ScalarProperty Name="IDNV3" ColumnName="IDNV3" />
+          <ScalarProperty Name="IDNV2" ColumnName="IDNV2" />
+          <ScalarProperty Name="IDNV1" ColumnName="IDNV1" />
+          <ScalarProperty Name="GIAVECHUYEN" ColumnName="GIAVECHUYEN" />
+          <ScalarProperty Name="THOIGIANDEN" ColumnName="THOIGIANDEN" />
+          <ScalarProperty Name="THOIGIANKHOIHANH" ColumnName="THOIGIANKHOIHANH" />
+          <ScalarProperty Name="NGAYKHOIHANH" ColumnName="NGAYKHOIHANH" />
+          <ScalarProperty Name="BIENSO" ColumnName="BIENSO" />
+          <ScalarProperty Name="IDTUYEN" ColumnName="IDTUYEN" />
+          <ScalarProperty Name="IDCHUYEN" ColumnName="IDCHUYEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

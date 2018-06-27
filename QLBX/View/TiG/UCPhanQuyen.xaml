@@ -1,0 +1,155 @@
+﻿<UserControl x:Class="QLBX.FormChucNang.UCPhanQuyen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QLBX.FormChucNang"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             Name="vexe"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             DataContext="{StaticResource QLNV}">
+
+    <Grid x:Name="mainPhanQuyen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="user_Groupuser">
+            <materialDesign:Card Margin="2 2 2 2 ">
+                <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                        <StackPanel>
+                            <ComboBox Visibility="Hidden"></ComboBox>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ListView x:Name="listusercq" ItemsSource="{Binding ListUserChuaQuyen}" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="UserName" DisplayMemberBinding="{Binding UserName}"></GridViewColumn>
+                            <GridViewColumn Header="Full Name" DisplayMemberBinding="{Binding PassWord}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding selectlistchuaquyen}" CommandParameter="{Binding ElementName=listusercq}">
+                                            </i:InvokeCommandAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ListView>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </Grid>
+            <Grid Grid.Column="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <RepeatButton Command="{Binding themquyen}" Margin="0 5 0 5" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton">
+                        <materialDesign:PackIcon Kind="SkipNext" />
+                    </RepeatButton>
+                    <RepeatButton Command="{Binding xoaquyen}" Margin="0 5 0 5" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton">
+                        <materialDesign:PackIcon Kind="SkipPrevious" />
+                    </RepeatButton>
+                            
+                        </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2">
+                <StackPanel>
+                            <ComboBox x:Name="cbper" Width="200" IsEditable="True" Text="Permisson" ItemsSource="{Binding cbpermisson}" DisplayMemberPath="NamePermission" SelectedValuePath="IDPermission">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="SelectionChanged">
+                                        <i:InvokeCommandAction Command="{Binding SelectionChangedCBPermisson}" CommandParameter="{Binding ElementName=cbper}">
+                                        </i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ComboBox>
+                            <ListView x:Name="listquyen" ItemsSource="{Binding listpermisson}" SelectedItem="{Binding selecteditempermisonchuaquyen,Mode=OneWayToSource}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="UserName" DisplayMemberBinding="{Binding UserName}"></GridViewColumn>
+                                <GridViewColumn Header="Full Name" DisplayMemberBinding="{Binding PassWord}"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="SelectionChanged">
+                                        <i:InvokeCommandAction Command="{Binding selectdsquyen}" CommandParameter="{Binding ElementName=listquyen}">
+                                        </i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ListView>
+                </StackPanel>
+                </Grid>
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
+        <Grid x:Name="permisson_groupermisson" Grid.Row="1">
+            <materialDesign:Card Margin="2 2 2 2 ">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Margin="5 0 5 2" Width="100" Text="{Binding idperthem,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" materialDesign:HintAssist.Hint="ID Permisson" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox Margin="5 0 5 2" Width="100" Text="{Binding nameperthem,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" materialDesign:HintAssist.Hint="Name Permisson" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <materialDesign:PopupBox Margin="10 0 0 0" PlacementMode="BottomAndAlignCentres" ToolTipService.Placement="Right" ToolTip="PopupBox, Style MaterialDesignMultiFloatingActionPopupBox">
+                                <StackPanel>
+                                    <Button Command="{Binding themnhomquyen}" CommandParameter="{Binding ElementName=vexe}" Style="{StaticResource MaterialDesignFloatingActionLightButton}" Margin="2 2 2 2" ToolTip="ADD">
+                                        <materialDesign:PackIcon Kind="Plus" />
+                                    </Button>
+                                    <!--<Button Command="{Binding suanhomquyen}" Style="{StaticResource MaterialDesignFloatingActionLightButton}" Margin="2 2 2 2" ToolTip="FIX">
+                                        <materialDesign:PackIcon Kind="Repeat" />
+                                    </Button>-->
+                                    <Button Command="{Binding xoanhomquyen}" CommandParameter="{Binding ElementName=vexe}" Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="2 2 2 2" ToolTip="REMOVE">
+                                        <materialDesign:PackIcon Kind="Cancel" />
+                                    </Button>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                        </StackPanel>
+                        <ListView x:Name="listset" ItemsSource="{Binding dsquyen}" SelectedItem="{Binding selectedchietiequyen, Mode=TwoWay}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="ID Permisson" DisplayMemberBinding="{Binding IDPermission}"></GridViewColumn>
+                                    <GridViewColumn Header="Name Permisson" DisplayMemberBinding="{Binding NamePermission}"></GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding selectlitquyen}" CommandParameter="{Binding ElementName=listset}">
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ListView>
+                    </StackPanel>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel VerticalAlignment="Center">
+                            <CheckBox x:Name="ck1" IsChecked="{Binding check1,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Margin="5 5 5 5" Command="{Binding capquyen1}" CommandParameter="{Binding ElementName=ck1}">Bán Vé</CheckBox>
+                            <CheckBox x:Name="ck2" IsChecked="{Binding check2,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Margin="5 5 5 5" Command="{Binding capquyen2}" CommandParameter="{Binding ElementName=ck2}">Nhân Viên</CheckBox>
+                            <CheckBox x:Name="ck3" IsChecked="{Binding check3,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Margin="5 5 5 5" Command="{Binding capquyen3}" CommandParameter="{Binding ElementName=ck3}">Sắp Lịch</CheckBox>
+                            <CheckBox x:Name="ck4" IsChecked="{Binding check4,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Margin="5 5 5 5" Command="{Binding capquyen4}" CommandParameter="{Binding ElementName=ck4}">Quản Lý Chuyến</CheckBox>
+                            <CheckBox x:Name="ck5" IsChecked="{Binding check5,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Margin="5 5 5 5" Command="{Binding capquyen5}" CommandParameter="{Binding ElementName=ck5}">Bến Xe</CheckBox>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                           
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+</UserControl>

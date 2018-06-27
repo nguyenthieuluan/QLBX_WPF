@@ -1,0 +1,192 @@
+﻿<UserControl x:Class="QLBX.FormChucNang.QuanLyXeForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLBX.FormChucNang"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="13"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         Background="{DynamicResource MaterialDesignPaper}"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+        DataContext="{StaticResource QuanLyXeVM}">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="mg" BasedOn="{StaticResource MaterialDesignFloatingActionMiniButton}">
+            <Setter Property="Margin" Value="4 8 4 8"></Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <!--Hien thi xe-->
+        <!--#region Xe-->
+        <Grid Grid.Column ="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="416*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--row show danh sach-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="157*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView ItemsSource="{Binding XeList}" SelectedItem="{Binding SelectedItem1}" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Biển Số" DisplayMemberBinding="{Binding BIENSO}"></GridViewColumn>
+                                <GridViewColumn Header="Nhả Sản Xuất" DisplayMemberBinding="{Binding NHASANXUAT}"></GridViewColumn>
+                                <GridViewColumn Header="Ngày Mua" DisplayMemberBinding="{Binding NGAYMUA,StringFormat=d}"></GridViewColumn>
+                                <GridViewColumn Header="Loại Xe" DisplayMemberBinding="{Binding IDLOAI}"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+                <!--them xoa sua-->
+                <StackPanel Margin="0 0 20 0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <Button
+                          Style="{StaticResource mg}" Command="{Binding AddCommand}"
+                          HorizontalAlignment="Left"
+                          ToolTip="MaterialDesignFloatingActionMiniButton">
+                        <materialDesign:PackIcon Kind="Plus" Height="24" Width="24" />
+                    </Button>
+                    <Button
+                          Style="{StaticResource mg}" Command="{Binding EditCommand}"
+                          HorizontalAlignment="Left"
+                          ToolTip="MaterialDesignFloatingActionMiniButton">
+                        <materialDesign:PackIcon Kind="Pencil" Height="24" Width="24" />
+                    </Button>
+                    <Button
+                          Style="{StaticResource mg}" Command="{Binding DeleteCommand}"
+                          HorizontalAlignment="Left"
+                          ToolTip="MaterialDesignFloatingActionMiniButton">
+                        <materialDesign:PackIcon Kind="Delete" Height="24" Width="24" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <!--Thong tin xe-->
+            <materialDesign:Card Margin="5" Grid.Row="1">
+                <WrapPanel Margin="5">
+                    <WrapPanel.Resources>
+                        <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+                            <Setter Property="Margin" Value="10 0 10 0"></Setter>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <TextBox 
+                         Text="{Binding BIENSO, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         materialDesign:HintAssist.Hint="Biển Số"/>
+                    <TextBox 
+                         Text="{Binding NHASANXUAT, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         materialDesign:HintAssist.Hint="Nhà Sản Xuất"/>
+                    <DatePicker Grid.Column="2"
+                   Margin="10 10 10 0"
+                   SelectedDate="{Binding NGAYMUA, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                   materialDesign:HintAssist.Hint="Ngày Nhập"/>
+                    <ComboBox VerticalAlignment="Bottom"
+                            DisplayMemberPath="TENLOAI" IsEditable="False"  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                            ItemsSource="{Binding LoaiXeList}"
+                            SelectedItem ="{Binding SelectedLoaiXe, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                            materialDesign:HintAssist.Hint="Loại Xe"/>
+                </WrapPanel>
+            </materialDesign:Card>
+
+            <!--Title Danh Sach Xe-->
+            <Grid Grid.Row="0">
+                <TextBlock Text="Danh Sách Xe" TextAlignment="Center"></TextBlock>
+            </Grid>
+        </Grid>
+        <!--#endregion-->
+        
+        <!--Hien thi loai xe-->
+        <!--#region Loai xe-->
+            <Grid Grid.Column ="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                    <TextBlock Text="Loại Xe" TextAlignment="Center"></TextBlock>
+                </Grid>
+
+                <materialDesign:Card Grid.Row="1" Margin="5">
+                <WrapPanel  Margin="5">
+                    <WrapPanel.Resources>
+                        <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+                            <Setter Property="Margin" Value="10 0 10 0"></Setter>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <TextBox
+                         Text="{Binding IDLOAI, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         materialDesign:HintAssist.Hint="ID Loại"/>
+                    <TextBox
+                         Text="{Binding TENLOAI, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         materialDesign:HintAssist.Hint="Tên Loại"/>
+                    <TextBox
+                         Text="{Binding SOCHONGOI, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         materialDesign:HintAssist.Hint="Số Chộ Ngồi"/>
+                    <TextBox
+                            Text="{Binding HESOGIAVE, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         materialDesign:HintAssist.Hint="Hệ Số Giá Vé"/>
+                </WrapPanel>
+            </materialDesign:Card>
+
+                <Grid Grid.Row="2">
+                    
+                <Grid>
+                    <ListView x:Name="lv" ItemsSource="{Binding LoaiXeList}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" HorizontalAlignment="Left">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID Loại" DisplayMemberBinding="{Binding IDLOAI}"></GridViewColumn>
+                                <GridViewColumn Header="Tên Loại" DisplayMemberBinding="{Binding TENLOAI}"></GridViewColumn>
+                                <GridViewColumn Header="Số Chỗ Ngồi" DisplayMemberBinding="{Binding SOCHONGOI}"></GridViewColumn>
+                                <GridViewColumn Header="Hệ Số Giá Vé" DisplayMemberBinding="{Binding HESOGIAVE}"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 20 0">
+                    <Button
+                              Style="{StaticResource mg}" Command="{Binding AddLoaiXeCommand}"
+                              HorizontalAlignment="Left"
+                              ToolTip="MaterialDesignFloatingActionMiniButton">
+                        <materialDesign:PackIcon Kind="Plus" Height="24" Width="24" />
+                    </Button>
+                    <Button
+                              Style="{StaticResource mg}" Command="{Binding EditLoaiXeCommand}"
+                              HorizontalAlignment="Left"
+                              ToolTip="MaterialDesignFloatingActionMiniButton">
+                        <materialDesign:PackIcon Kind="Pencil" Height="24" Width="24" />
+                    </Button>
+                    <Button
+                              Style="{StaticResource mg}" Command="{Binding DeleteLoaiXeCommand}"
+                              HorizontalAlignment="Left"
+                              ToolTip="MaterialDesignFloatingActionMiniButton">
+                        <materialDesign:PackIcon Kind="Delete" Height="24" Width="24" />
+                    </Button>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+        <!--#endregion-->
+        
+    </Grid>
+</UserControl>

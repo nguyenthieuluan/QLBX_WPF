@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="QLBX.FormChucNang.UCNhanVienBanVe"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QLBX.FormChucNang"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        DataContext="{StaticResource MainTiGVM}">
+    <StackPanel x:Name="QLNguoiDung">
+        <Grid Height="50">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10 0">
+                <Button Uid="0" Width="150" Content="Nhân Viên" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click"/>
+                <Button Uid="1" Width="150" Content="Phân Quyền" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click"/>
+               <!-- <Button Uid="2" Width="150" Content="BLOG" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click"/>-->
+                
+               
+               
+               
+            </StackPanel>
+           
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="nhanvien" Height="10" Grid.Column="0"></Grid>
+            <Grid x:Name="quyen" Height="10" Grid.Column="1"></Grid>
+        </Grid>
+        <Grid x:Name="gridphan" RenderTransformOrigin="0.5,0.5">
+
+        </Grid>
+    </StackPanel>
+</UserControl>
