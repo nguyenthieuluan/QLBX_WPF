@@ -173,8 +173,6 @@ E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\itextsharp.xml
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.pdb
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\MaterialDesignThemes.Wpf.xml
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\Microsoft.Expression.Interactions.xml
-E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\bin\Debug\System.Windows.Interactivity.xml
-E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.csprojResolveAssemblyReference.cache
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BaoCaoThongKeForm.g.cs
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BenXe\BenXeForm.g.cs
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\View\BenXe\BenXeSubForm.g.cs
@@ -246,3 +244,4 @@ E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.csproj.CoreCompileInputs
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.csproj.CopyComplete
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.exe
 E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.pdb
+E:\MH\Đồ Án Tốt Nghiệp\QLBX\QLBX\obj\Debug\QLBX.csprojAssemblyReference.cache

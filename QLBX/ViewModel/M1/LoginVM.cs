@@ -36,7 +36,6 @@ namespace QLBX.ViewModel
         void Login(Window p)
         {
             IsLogin = true;
-            p.Close();
             if (p == null)
                 return;
             //string passEncode = MD5Hash(Base64Encode(Password));

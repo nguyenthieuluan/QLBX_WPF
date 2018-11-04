@@ -32,7 +32,6 @@
     </i:Interaction.Triggers>
     
     <Window.Resources>
-         
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="luna2">
                 <EasingDoubleKeyFrame KeyTime="0" Value="80"/>
@@ -205,9 +204,12 @@
                                     <TextBlock Margin="1 0 0 0">Hệ thống</TextBlock>
                                 </WrapPanel>
                             </MenuItem.Header>
+                            
                             <MenuItem Header="_Đăng xuất"
                               Command="{Binding DangXuatCommand}"/>
+                            
                             <MenuItem Header="_Tài khoản" />
+                                
                             <Separator />
                             <MenuItem Header="Thoát"
                               CommandParameter="{Binding ElementName=mainWindow}"

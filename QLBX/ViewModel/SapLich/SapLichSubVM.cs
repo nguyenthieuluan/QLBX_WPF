@@ -36,7 +36,7 @@ namespace QLBX.ViewModel
         private ChiTietTuyen _ChiTietTuyen;
         public ChiTietTuyen ChiTietTuyen { get => _ChiTietTuyen; set { _ChiTietTuyen = value; OnPropertyChanged(); } }
 
-        //List xe uu tien
+        //List xe uu tien    
         private ObservableCollection<XE> _ListXeUuTien;
         public ObservableCollection<XE> ListXeUuTien { get => _ListXeUuTien; set { _ListXeUuTien = value; OnPropertyChanged(); } }
         //List nhan vien uu tien
@@ -54,15 +54,6 @@ namespace QLBX.ViewModel
         public SapLichSubVM()
         {
             
-
-
-            
-
-
-
-
-
-
 
             #region Command
 

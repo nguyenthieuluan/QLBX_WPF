@@ -46,11 +46,6 @@
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="7*"/>
-                        <ColumnDefinition Width="19*"/>
-                    </Grid.ColumnDefinitions>
                     <PasswordBox x:Name="FloatingPasswordBox"
                                  materialDesign:HintAssist.Hint="Mật khẩu"
                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Grid.ColumnSpan="3">

@@ -175,6 +175,7 @@ namespace QLBX.ViewModel
 
                 SapLichSubVM slvm = new SapLichSubVM();
                 slvm.ChiTietTuyen = SelectedItem;
+
                 SapLichSubForm slsf = new SapLichSubForm();
                 slsf.DataContext = slvm;
                 slsf.ShowDialog();

@@ -65,9 +65,8 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -442,15 +441,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\h4.jpg" />
-    <Resource Include="Img\h2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\admin.jpg" />
-    <Resource Include="Img\h3.jpg" />
-    <Resource Include="Img\h5.jpg" />
     <Resource Include="Img\h0.jpg" />
     <Resource Include="Img\ico.ico" />
-    <Resource Include="Img\h1.jpg" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
